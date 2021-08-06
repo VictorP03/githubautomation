@@ -28,15 +28,16 @@ except FileExistsError as err:
     raise SystemExit(err)
 
 try:
-    REPO_PATH = 'C:/projecten/'
-    os.chdir(REPO_PATH)
+    PROJECT_PATH = 'C:/projecten/'
+    os.chdir(PROJECT_PATH)
     os.system("mkdir " + name)
-    os.chdir(REPO_PATH + name)
+    os.chdir(PROJECT_PATH + name)
     os.system("git init")
     os.system("git remote add origin https://github.com/VictorP03/" + name + ".git")
     os.system("echo '# " + name + "' >> README.md")
     os.system("git add .")
     os.system("git commit -m \"first commit\"")
     os.system("git push origin master")
+    os.system("code .")
 except FileExistsError as err:
     raise SystemExit(err)
